@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./logo/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./logo/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./logo/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./logo/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./logo/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./logo/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./logo/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./logo/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./logo/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./logo/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./logo/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./logo/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./logo/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./logo/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Bài tập 2</title>
+    <style>
+      /* a) Đại học UEH */
+      .p-ueh {
+        color: #0b66ff; /* chữ xanh */
+        text-align: center; /* canh giữa */
+        font-weight: 700; /* in đậm */
+        text-decoration: underline; /* gạch chân */
+        font-size: 30px; /* 30px */
+        margin: 12px 0;
+      }
+
+      /* b) Khoa CNTTD */
+      .p-cnttd {
+        color: rgba(255, 0, 0, 0.5); /* đỏ nhưng mờ 50% */
+        text-align: right; /* canh phải */
+        font-style: italic; /* in nghiêng */
+        background: #eee; /* nền xám */
+        font-size: 15px; /* 15px */
+        border: 2px dotted #ffd54d; /* viền chấm vàng */
+        border-radius: 8px; /* bo góc */
+        padding: 8px 10px;
+        margin: 12px 0;
+      }
+
+      /* c) Định dạng chữ “BIT-UEH” dùng link webfont ở <head> */
+      .p-bit {
+        font-family: "Bebas Neue", system-ui, sans-serif; /* dùng link ở trên */
+        font-size: 56px;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #111;
+        -webkit-text-stroke: 1px #000; /* viền chữ (nếu muốn kiểu outline) */
+      }
+
+      /* d) Lấy logo BIT (30px) làm hình nền lặp và cố định */
+      .bg-bit {
+        min-height: 140px;
+        background-image: url("images/bit-logo.png"); /* thay bằng đường dẫn logo của bạn */
+        background-size: 30px 30px; /* kích cỡ 30px */
+        background-repeat: repeat; /* lặp lại */
+        background-attachment: fixed; /* cố định khi cuộn */
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        margin: 14px 0;
+      }
+
+      /* e) Đoạn văn cần demo overflow */
+      /* e.i  Rộng 100px, cao 50px, ẩn phần tràn */
+      .box-ovh {
+        width: 100px;
+        height: 50px;
+        overflow: hidden; /* ẩn nội dung bị tràn */
+        border: 1px solid #aaa;
+        padding: 6px;
+        margin: 8px 0;
+        background: #fafafa;
+      }
+
+      /* e.ii Cắt nội dung tràn với dấu “...” */
+      .box-elli {
+        width: 100px;
+        height: 50px;
+        padding: 6px;
+        margin: 8px 0;
+        white-space: nowrap; /* cần kết hợp để ellipsis hoạt động trên 1 dòng */
+        overflow: hidden;
+        text-overflow: ellipsis; /* hiển thị ... */
+        border: 1px solid #aaa;
+        background: #fafafa;
+      }
+
+      /* e.iii Không xuống dòng (nowrap) – giữ nguyên toàn bộ nội dung nếu còn chỗ */
+      .box-nowrap {
+        width: 100px;
+        height: 50px;
+        padding: 6px;
+        margin: 8px 0;
+        white-space: nowrap; /* không xuống dòng */
+        overflow: auto; /* có thanh cuộn nếu tràn */
+        border: 1px solid #aaa;
+        background: #fafafa;
+      }
+      body {
+        background-image: url("https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/358689356_712772674194748_4833614343900488702_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=EBXjtGdS6uMQ7kNvwGeZbzW&_nc_oc=AdmCYrtANAJ1OcoYHoPPZzRF2BxTt0sjHRnAiVAwyb2QxJaZe-z8u4Zms5CSCd_WZpHVYdJIweVRoPLynBvD8ijH&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&_nc_gid=OuusVLzR8JSVSABOQ7mZNw&oh=00_Aff-yeenGePVNj2fGgvTyLGbkQb2VhFYWasuV6bWEgOEfg&oe=6903AD5C");
+        background-size: 30px 30px;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="p-ueh">Đại học UEH</p>
+
+    <p class="p-cnttd">Khoa CNTTD</p>
+
+    <p class="p-bit">BIT-UEH</p>
+
+    <div class="bg-bit">
+      Nội dung minh họa – khối này có nền dùng logo BIT kích cỡ 30px, lặp lại và
+      cố định khi cuộn.
+    </div>
+
+    <p><strong>Đoạn văn mẫu (e):</strong></p>
+    <div class="box-ovh">
+      Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang
+      có những bước tăng trưởng mạnh mẽ...
+    </div>
+
+    <div class="box-elli">
+      Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang
+      có những bước tăng trưởng mạnh mẽ...
+    </div>
+
+    <div class="box-nowrap">
+      Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang
+      có những bước tăng trưởng mạnh mẽ...
+    </div>
+  </body>
+</html>

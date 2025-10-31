@@ -1,0 +1,333 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./logo/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./logo/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./logo/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./logo/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./logo/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./logo/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./logo/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./logo/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./logo/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./logo/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./logo/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./logo/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./logo/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./logo/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Bài tập 10</title>
+    <style>
+      :root {
+        --bg: #fafafa;
+        --card: #ffffff;
+        --txt: #222;
+        --muted: #666;
+        --brand: #0a66c2;
+        --border: #e6e6e6;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, sans-serif;
+        color: var(--txt);
+        background: var(--bg);
+      }
+      .container {
+        max-width: 1000px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      header.site {
+        background: linear-gradient(180deg, #f3f7ff, transparent);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+      .profile {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #fff;
+        box-shadow: var(--shadow);
+        background: #ddd;
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .name {
+        margin: 0 0 6px;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .bio {
+        margin: 0;
+        color: var(--muted);
+      }
+      .social {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .social a {
+        text-decoration: none;
+        color: #fff;
+        background: var(--brand);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+      }
+      .social a.alt {
+        background: #111;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 640px) {
+        .profile {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .card a {
+        margin-top: auto;
+        align-self: flex-start;
+        text-decoration: none;
+        color: #fff;
+        background: #0072ce;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      nav.quick {
+        margin-top: 16px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      nav.quick a {
+        text-decoration: none;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--txt);
+        background: #fff;
+      }
+      footer.site {
+        margin: 28px 0;
+        color: var(--muted);
+        text-align: center;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- THÔNG TIN CÁ NHÂN -->
+      <header class="site">
+        <div class="profile">
+          <div class="avatar">
+            <!-- Thay link ảnh của bạn bên dưới -->
+            <img
+              src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/463338315_556652016835637_4038768283947111853_n.jpg?stp=cp6_dst-jpg_s160x160_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEdDBvlG9z4JgdePT9o4aQRqJqWif4YYO6ompaJ_hhg7vYw77XPhiHH6ZTu-r7KgCP3iOg3CyaNL9SLv4pNvj1C&_nc_ohc=_7duERQlEcMQ7kNvwFJ8rhx&_nc_oc=Adm1zWnbY7oW5nvBAhMyzgpDfsx5rXz0spBMh1jUOw7M-KU4KJZ18e00gZTVxQJ74Oc&_nc_zt=24&_nc_ht=scontent.fsgn3-1.fna&_nc_gid=H9DURmC-xP6xerhs4ljW-w&oh=00_AfdA75J-LyEmGhWqkGP7lY-rSzuY5EINQXd6aQgLRb6d5A&oe=69015E3C"
+              alt="Ảnh cá nhân"
+            />
+          </div>
+          <div>
+            <!-- Điền họ tên của bạn -->
+            <h1 class="name">Họ tên: Vũ Ngọc Bảo Khanh</h1>
+            <p class="bio">
+              Sinh viên Khoa Công Nghệ Thông Tin Kinh Doanh – UEH. Đam mê web,
+              e-commerce và UX/UI.
+            </p>
+            <div class="social">
+              <!-- Cập nhật link social của bạn -->
+              <a
+                href="https://web.facebook.com/khanh.vu.843845/"
+                target="_blank"
+                rel="noopener"
+                >Facebook</a
+              >
+              <a
+                href="https://ck7christ.github.io/vungocbaokhanh/"
+                target="_blank"
+                rel="noopener"
+                class="alt"
+                >GitHub</a
+              >
+              <a href="mailto:khanhvu.31231023813@st.ueh.edu.vn" class="alt"
+                >Email</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Lối tắt nhanh đến các bài -->
+        <nav class="quick" aria-label="Lối tắt nhanh">
+          <a href="#bt">Đến danh sách bài tập</a>
+          <a href="#about">Giới thiệu</a>
+        </nav>
+      </header>
+
+      <!-- DANH SÁCH BÀI TẬP -->
+      <section id="bt" class="grid" aria-label="Danh sách bài tập">
+        <article class="card">
+          <h3>Bài 1</h3>
+          <a href="Tuan3/VeNha/BaiTap1.html" target="_blank" rel="noopener"
+            >Mở Bài 1</a
+          >
+        </article>
+
+        <article class="card">
+          <h3>Bài 2</h3>
+          <a href="Tuan3/VeNha/BaiTap2.html" target="_blank" rel="noopener"
+            >Mở Bài 2</a
+          >
+        </article>
+
+        <article class="card">
+          <h3>Bài 3</h3>
+          <a href="Tuan3/VeNha/BaiTap3.html" target="_blank" rel="noopener"
+            >Mở Bài 3</a
+          >
+        </article>
+
+        <article class="card">
+          <h3>Bài 8</h3>
+          <a href="Tuan3/VeNha/BaiTap8.html" target="_blank" rel="noopener"
+            >Mở Bài 8</a
+          >
+        </article>
+
+        <article class="card">
+          <h3>Bài 9</h3>
+          <a href="Tuan3/VeNha/BaiTap9.html" target="_blank" rel="noopener"
+            >Mở Bài 9</a
+          >
+        </article>
+      </section>
+
+      <!-- GIỚI THIỆU NGẮN -->
+      <section id="about" style="margin-top: 24px">
+        <h2>Giới thiệu</h2>
+        <p>
+          Đây là trang tổng hợp các bài tập HTML từ Câu 1–9. Các file được đặt
+          cùng thư mục với <code>index.html</code>. Nếu bạn đổi tên file bài
+          tập, vui lòng cập nhật lại đường dẫn tương ứng.
+        </p>
+      </section>
+
+      <footer class="site">
+        <p>© <span id="y"></span> • Trang Index bài tập HTML</p>
+      </footer>
+    </div>
+
+    <script>
+      // năm hiện tại
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
