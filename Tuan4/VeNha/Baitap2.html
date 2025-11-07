@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./logo/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./logo/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./logo/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./logo/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./logo/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./logo/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./logo/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./logo/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./logo/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./logo/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./logo/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./logo/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./logo/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./logo/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Bài tập 2</title>
+    <style>
+      img {
+        max-width: 100%;
+      }
+      .view {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        float: left;
+        border: 10px solid #fff;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        box-shadow: 1px 1px 2px #e6e6e6;
+        cursor: default;
+        background: #fff url(../images/bgimg.jpg) no-repeat center center;
+      }
+      .view .mask,
+      .view .content {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+      }
+      .view img {
+        display: block;
+        position: relative;
+      }
+      .view h2 {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-size: 17px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        margin: 20px 0 0 0;
+      }
+      .view p {
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 12px;
+        position: relative;
+        color: #fff;
+        padding: 10px 20px 20px;
+        text-align: center;
+      }
+      .view a.info {
+        display: inline-block;
+        text-decoration: none;
+        padding: 7px 14px;
+        background: #000;
+        color: #fff;
+        text-transform: uppercase;
+        box-shadow: 0 0 1px #000;
+      }
+      .view a.info:hover {
+        box-shadow: 0 0 5px #000;
+      }
+      /* Trạng thái ban đầu */
+      .view-first img {
+        transition: all 0.2s linear;
+      }
+
+      .view-first .mask {
+        opacity: 0;
+        background-color: rgba(173, 216, 230, 0.7); /* màu xanh nhạt */
+        transform: translateX(-100%); /* Nằm ngoài bên trái */
+        transition: all 0.4s ease-in-out;
+      }
+
+      .view-first h2 {
+        transform: translateY(-100px);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .view-first p {
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.2s linear;
+      }
+
+      .view-first a.info {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Hiệu ứng hover: chạy mask từ trái sang phải */
+      .view-first:hover img {
+        transform: scale(1.1);
+      }
+
+      .view-first:hover .mask {
+        opacity: 1;
+        transform: translateX(0); /* chạy từ trái sang phải */
+      }
+
+      .view-first:hover h2,
+      .view-first:hover p,
+      .view-first:hover a.info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .view-first:hover p {
+        transition-delay: 0.1s;
+      }
+
+      .view-first:hover a.info {
+        transition-delay: 0.2s;
+      }
+      /* TRẠNG THÁI BAN ĐẦU */
+      .view-seventh img {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        transition: all 0.6s ease-out;
+      }
+
+      .view-seventh .mask {
+        background-color: rgba(77, 44, 35, 0.5);
+        opacity: 0;
+        transform: translateY(-200px) rotate(180deg) scale(1);
+        transition: all 0.6s ease-out;
+      }
+
+      .view-seventh h2,
+      .view-seventh p,
+      .view-seventh a.info {
+        opacity: 0;
+        transform: translateY(-200px) rotate(0deg);
+        transition: all 0.4s ease-out;
+      }
+
+      /* ===========================
+        HOVER HIỆU ỨNG
+   =========================== */
+
+      /* ẢNH GIỮ NGUYÊN — KHÔNG BIẾN MẤT */
+      .view-seventh:hover img {
+        transform: rotate(18deg) scale(1.15); /* xoay + scale nhẹ */
+        opacity: 1; /* giữ hình */
+      }
+
+      /* MASK XOAY GIỐNG ẢNH */
+      .view-seventh:hover .mask {
+        opacity: 1;
+        transform: translateY(0) rotate(18deg) scale(1);
+        transition-delay: 0.3s; /* ảnh quay xong rồi mask vào */
+      }
+
+      /* TEXT XOAY GIỐNG ẢNH */
+      .view-seventh:hover h2,
+      .view-seventh:hover p,
+      .view-seventh:hover a.info {
+        opacity: 1;
+        transform: translateY(0) rotate(18deg);
+      }
+
+      /* DELAY GIỐNG PHONG CÁCH VÍ DỤ 7 GỐC */
+      .view-seventh:hover h2 {
+        transition-delay: 0.6s;
+      }
+      .view-seventh:hover p {
+        transition-delay: 0.5s;
+      }
+      .view-seventh:hover a.info {
+        transition-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="view view-first">
+      <img src="./img/img.jpg" />
+      <div class="mask">
+        <h2>Title</h2>
+        <p>Your Text</p>
+        <a href="#" class="info">Read More</a>
+      </div>
+    </div>
+    <div class="view view-seventh">
+      <img src="./img/img.jpg" />
+      <div class="mask">
+        <h2>Title</h2>
+        <p>Your Text</p>
+        <a href="#" class="info">Read More</a>
+      </div>
+    </div>
+  </body>
+</html>
